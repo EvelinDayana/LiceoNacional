@@ -1,0 +1,170 @@
+#div-start{
+	margin: 0;
+	padding: 0;
+	margin-top: 50px;
+}
+
+.cover-page{	
+	background-image: url('../image/profile/photo-coverPage-default/photo2.jpg');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	height: 450px;
+	box-shadow: 0 4px 2px -3px gray;
+	margin:0;
+	padding: 0;
+}
+
+
+.div-photo-profile{
+	border-radius: 100%;
+	border:9px solid;
+	border-color: rgba(255, 255, 255 ,0.3);
+	display: inline-block;
+	vertical-align: center;
+	margin-right: 30px;
+	margin-left: 30px;
+}
+
+#div-profile-options{
+	margin-top: 40px;
+}
+
+.div-photo-user{
+	text-decoration: none;
+	width: 147px;
+	height: 147px;
+	border:0 none;
+	outline: 0px none;
+}
+
+.div-photo-user:hover{
+	text-decoration: none;
+	outline: 0px none;
+	filter: brightness(0.6);
+	-webkit-filter: brightness(0.6);
+}
+
+.photo-profile{
+	width: 147px;
+	height: 147px;
+	border-radius: 100%;
+	object-fit: cover;
+}
+
+#file{
+	display: none;
+}
+
+#file-image{
+	background: #009688;
+}
+
+.image-user-update{
+	border-radius: 100%;
+	width: 147px;
+	height: 147px;
+	object-fit: cover;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.div-name-profile{
+	margin-top: 18px;
+	text-align: center;
+}
+
+.name-profile{
+	font-size: 25px;
+	font-weight: bold;	
+}
+
+
+#icon1-follow , #icon2-configuration{
+	font-size: 25px;
+	background: rgba(255, 255,255, 0.8);
+	width: 50px;
+	height: 50px;
+	border-radius: 100%;
+	padding-top: 14px;
+	color: #757575;
+	display: inline-block;
+}
+
+#icon1-follow:focus{
+	background: teal;
+	color: white;
+}
+
+.btn-follow{
+	background: teal;
+	margin-top: 17px;
+	color: white;
+}
+
+.btn-follow:hover{
+	color: #000;
+	background: rgba(0,150,136,0.7);	
+}
+
+#link-nameuser{
+	color: currentColor;
+}
+
+.photo-profile-center{
+	text-align: center;
+	vertical-align: middle;
+}
+
+.type-user{
+	font-size: 17px;
+	color: #737373;
+}
+
+#options-bar{
+
+	height: 90px;
+	background-color: rgba(255,255,255,0.75);
+	margin-top: 40px;
+	padding-top: 25px;
+	border-top-left-radius:  15px;
+	border-top-right-radius: 15px; 
+}
+
+.href-friends:hover, .href-information:hover, .href-event:hover, .href-profile:hover, .href-push:hover, .href-configuration:hover{
+	text-decoration: none;
+	color: #000;
+	font-weight: bold;
+
+}
+
+.icon-friends, .icon-information, .icon-event, .icon-profile, .icon-push, .icon-configuration{
+	font-size: 20px;
+	color: #757575;
+}
+
+.icon-friends:hover, .icon-information:hover, .icon-event:hover, .icon-profile:hover, .icon-push:hover, .icon-configuration:hover{
+	font-size: 25px;
+	color: #ffb300;
+	font-weight: bold;
+}
+
+
+.friends, .information, .event, .profile, .push, .configuration{
+	font-size: 15px;
+	color: #000;
+}
+
+.center{
+	text-align: center;
+}
+
+.link-presentation .active{
+	height: 100%;
+	border-bottom: 4px solid #009688;
+	text-decoration-line: none;
+}
+
+.options-profile{
+	margin: 0;
+	padding: 0;
+}

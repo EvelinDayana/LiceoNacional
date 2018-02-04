@@ -1,0 +1,62 @@
+.div-box-follower{
+	margin: 0;
+	padding: 0;
+	margin-top: 30px;
+	margin-bottom: 30px;
+
+}
+
+.photo-user-follower{
+	width: 100px;
+	height: 100px;
+	border-radius: 100%;
+}
+
+.list-group-follower{
+	margin: 0; 
+	padding: 0; 
+	padding: 15px;
+	height: 100%;
+	display: inline-flex; 
+	align-items: center;
+}
+
+.photo-follower{
+	height: 120px;
+	width: 120px;
+	outline: none;
+	text-decoration: none;
+}
+
+.name-follower{
+	margin-left: 10px;
+	color:#000;
+}
+
+.label-name-follower{
+	font-weight: normal;
+}
+.label-name-follower:hover{
+	font-weight: bold;
+	color: #000;
+}
+
+.photo-follower:hover, .name-follower:hover{
+	text-decoration-line: none;
+
+}
+
+#color-btn-follower{
+	background: #009688;
+}
+
+.div-information, .div-follow{
+	margin: 0;
+	padding: 0;
+}
+
+.btn-follow{
+	background: #009688; 
+	color: #ffffff; 
+	float: right; 
+}

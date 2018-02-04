@@ -1,0 +1,147 @@
+.body{
+	height: 100vh;
+}
+.image-body{
+	width: 100%;
+	height: 100%;
+	filter: brightness(0.3);
+	-webkit-filter: brightness(0.3);
+	position: fixed;
+	z-index: -1;
+}
+
+.nav{
+	width: 100%;
+	height: 120px;
+	background-color: rgba(255, 204, 128 ,0.6);
+	display: inline-flex;
+	align-items: center;
+}
+
+.logo{
+	width: 80px;
+	height: 80px;
+	float: left;
+	left: 23px;
+}
+
+#btn-nav-sign-up{
+	text-decoration: none;
+	background: #5cb85c;
+	float: right;
+	right: 25px;
+}
+
+
+#btn-nav-sign-up:hover{
+	text-decoration: none;
+}
+
+.body-login{
+	margin-top: 20px;
+}
+
+
+.login{
+	display: inline-block;
+	width: 470px;
+	height: 470px;
+	padding-top: 80px;
+	padding-left: 50px;
+	padding-right: 50px;
+	background-image: url("../image/signIn/background/background-login.png");
+	background-repeat: no-repeat;
+	background-size: 470px;
+	text-align: center;
+	
+}
+
+.div-login{
+	width: 100%;
+}
+
+.div-form-sign-in{
+	height: 72vh;
+	display: inline-flex;
+	align-items: center;
+	text-align: left;
+	margin: 0;
+	padding: 0;
+}
+
+#form-signin{
+	margin-top: 70px;
+}
+
+.input-password{
+	padding-top: 30px;
+}
+
+.div-title-login{
+	display: inline-flex;
+	text-align: center;
+	align-items: center; 
+	height: 72vh;
+	margin: 0;
+	padding: 0;
+}
+
+.title{
+	width: 100%; 
+	margin: 0; 
+	padding: 0; 
+}
+
+#text-deco{
+	font: small-caps 100%/100% serif;
+	font-size: 70px;
+	color: #fff;
+}
+
+
+.user{
+	width: 120px;
+	height: 120px;
+	margin-top: -50px;
+	display: inline-block;
+	margin-bottom: -15px;
+}
+
+.img-user{
+	object-fit: cover;
+}
+
+.user-default{
+	text-align: center;
+}
+
+.btn-submit{
+	margin-top: 30px;
+	font-weight: bold;
+}
+
+.user-login-div{
+	margin-top: -40px;
+}
+
+.forget-div{
+	margin-top: 37.5px;
+	width: 370px;
+	height: 45px;
+	padding-top: 12px;
+	background-color: rgba(255, 255, 255, 0.7);
+	text-align: center;
+	border-radius: 5px;
+}
+
+.text-forget-div{
+	font-weight: normal;
+}
+
+#hl{
+	color: #E65100;	
+}
+
+
+
+

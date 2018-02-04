@@ -1,0 +1,92 @@
+.nav{
+	background: #009688;
+}
+
+.nav-form{
+	margin-top: 7.5px; 
+	padding-left: 4%; 
+	width: 500px;
+}
+
+.link-logo{
+	width: 40px;
+	height: 40px;
+	margin: 0;
+	padding: 0;
+	border-radius: 100%;
+	margin-top: 5px;
+	margin-left: 15px;
+}
+
+.img-default{
+	width: 40px;
+	height: 40px;
+	border-radius: 100%; 
+}
+
+.browser{
+	width: 100%;
+}
+
+
+.nav-li{
+	height: 50px; 
+	padding-top: 5px;
+}
+
+.nav-li:hover{
+	background: rgba(255,255,255,0.4);
+}
+
+.nav-image-profile{
+	width: 40px;
+	height: 40px;
+	border-radius: 100%; 
+	margin-right: 10px;
+}
+
+
+.name-user-nav{
+	margin-right: 10px;
+}
+
+
+.nav-li-right{
+	padding-left: 8px; 
+	padding-right: 25px;
+	height: 50px;
+	vertical-align: middle;
+}
+
+.nav-li-right:hover{
+	background: rgba(255,255,255,0.4);
+	height: 50px;
+}
+
+.caret{
+	color: #ffffff;
+}
+
+#nav-a{
+	color: white;
+	text-decoration: none;
+	padding-top: 5px;
+	padding-right: 5px;
+	height: 100%;
+	margin-top: 0;
+	padding-top: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

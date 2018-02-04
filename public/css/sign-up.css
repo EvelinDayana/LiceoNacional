@@ -1,0 +1,61 @@
+.nav{
+	background: #fff;
+	width: 100%;
+	height: 110px;
+	align-items: center;
+	display: inline-flex;
+	justify-content: center;
+	box-shadow: 0 5px 7px rgba(1,1,1,0.14), 0 1px 4px rgba(0,0,0,0.24);	
+}
+
+.logo{	
+	text-align: center;
+}
+
+.sign-up{
+	width: 100%;
+	margin-top: 10px;	
+	text-align: center;
+}
+
+.form-sign-up{
+	width: 40%;
+	display: inline-block;
+
+}
+
+.title{
+	text-align: left;
+	font-weight: normal;
+	color: gray; 
+}
+
+.sign-in{
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.sing-in-a:hover{
+	font-weight: bold;
+}
+
+
+#sign-Up1 , #sign-Up2, #sign-Up4{
+	display: none;
+}
+
+
+#text-deco{
+	font: small-caps 100%/200% serif;
+	font-size: 40px;
+
+}
+
+#name, #lastname{
+	text-transform: capitalize;
+}
+
+.div-document, .div-name, .div-lastname, .div-password, .div-phone, .div-email, .div-date, .div-typeuser, .div-state, .div-emphasis, .div-sex{
+	color: #F44336;
+	text-align: center;
+}

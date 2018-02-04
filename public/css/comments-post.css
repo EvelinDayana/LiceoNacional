@@ -1,0 +1,50 @@
+.header-post-comment{
+	margin: 0;
+	padding: 0;
+	padding-left: 5px;
+	padding-top: 10px;
+	width: 100%;
+
+}
+
+.name-user-comments{
+	vertical-align:top;	
+	color: #000;
+	text-decoration: none;
+}
+
+.name-user-comments:hover{
+	color: #757575;
+	text-decoration: none;
+}
+
+#btn-comment{
+	margin:0;
+	padding: 0;	
+	padding-right: 15px;
+	display: none;
+	margin-top: -5px;
+}
+
+.comment-text{
+	text-align: justify;
+}
+
+.points-menu-2{
+	height: 16px;
+}
+
+.delete{
+	background:  #ffb300;
+	border: 1px solid #FF8F00;
+}
+
+.delete:hover{
+	background-color: #FFD54F;
+	border: 1px solid #ffb300;
+	font-weight: bold;
+}
+
+.delete-c:hover{
+	cursor: pointer;
+}

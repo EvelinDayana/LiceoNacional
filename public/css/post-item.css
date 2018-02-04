@@ -1,0 +1,168 @@
+.divs-posts{
+
+	box-shadow: 0 4px 2px -3px gray;
+	background: #fff;
+	border-radius: 2px;
+	box-shadow: 1px 1px 5px gray;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	margin-top: 30px;
+}
+
+.header-post{
+	margin:0;
+	padding: 0;
+	padding-top: 20px;
+	padding-left: 20px;
+	padding-right: 15px;
+}
+
+.photo-profile-post{
+	width: 40px;
+	height: 40px;
+	object-fit: cover;
+	border-radius: 100%;
+}
+
+.content-post{
+
+	padding-top: 20px;
+	padding-bottom: 15px;
+	margin: 0;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.options-post{
+	margin:0;
+	padding: 0;
+}
+
+.name-post{
+	margin-left: 10px;
+	text-decoration: none;
+	color: black;
+}
+
+.name-post:hover{
+	text-decoration: none;
+	color: #757575;
+}
+
+.link-photo-profile-post:hover{
+	text-decoration: none;
+	border-radius: 100%;
+}
+
+.comment{
+	margin-left: 5px;
+	color: black;
+}
+
+.thumbs{
+	margin-left: 5px;
+	color: black;
+}
+
+.glyphicon-comment{
+	vertical-align: text-top;
+	color: #757575;
+}
+
+.glyphicon-thumbs-up{
+	vertical-align: text-top;
+	color: #757575;
+}
+
+.link-comment{
+	margin-right: 15px;
+	cursor: pointer;
+}
+
+.link-like{
+	margin-left: 10px;
+	font-weight: normal;
+}
+
+.time-post{
+	text-align: right;
+	padding-right: 2px;
+	color: #757575;
+}
+
+.points-menu{
+	height: 16px;
+}
+
+.btn-options{
+	padding-right: 0px;
+}
+
+.footer-post{
+	margin: 0;
+	padding-top: 0px;
+	padding-left: 20px;
+	padding-right: 15px;
+	padding-bottom: 20px;
+}
+
+.comment-post{
+	margin: 0;
+	padding: 0;	
+	margin-top: -10px;
+}
+
+.img-comment{
+	margin: 0;
+	padding: 0;
+	padding-left: 20px;
+	margin-top: 20px;
+}
+
+.txt-comment{
+	margin: 0;
+	padding: 0;
+	padding-right: 20px;
+	padding-left: 15px;
+	margin-top: 20px;
+	margin-bottom: 5px;
+}
+
+
+.photo-profile-comment{
+	width: 35px;
+	height: 35px;
+	border-radius: 100%;
+}
+.btn-submit{
+	background-image: url('../image/icons/icon-submit.png');
+	background-repeat: no-repeat;
+	width: 25px;
+	height: 25px;
+	margin-top: 18px;	
+	margin-bottom: 10px;
+	pointer-events: none;
+}
+
+
+.btn-submit2{
+	background-image: url('../image/icons/icon-submit2.png');
+	background-repeat: no-repeat;
+	width: 25px;
+	height: 25px;	
+	margin-top: 18px;	
+	margin-bottom: 10px;
+	cursor: pointer;
+}
+
+.color-link-like{
+	color: teal;
+	margin-left: 10px;
+}
+
+
+.delete-p:hover{
+	cursor: pointer;
+}
+ 

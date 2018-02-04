@@ -1,0 +1,70 @@
+.div-box{
+	margin: 0;
+	padding: 0;
+	margin-top: 30px;
+	width: 100%;
+	height: 100%;
+}
+
+.sub-div-box-follow{
+	margin: 0;
+	padding: 0;
+	background: white;
+	padding-bottom: 30px;
+}
+
+.div-title-follow{
+	margin: 0;
+	padding: 0;
+	background: #e0e0e0;
+	height: 110px;
+}
+
+#label-search{
+	margin-bottom: 0px;
+}
+
+.mdl-textfield__label:after{
+    background-color: #009688;
+    color: #009688;
+}
+
+#div-search{
+	float: right;
+	margin-right: 15px;
+}
+
+.options-tabs{
+	margin: 0;
+	padding: 0;
+	height: 50%;
+}
+
+.div-title-follow .active{
+	border-bottom: 4px solid #009688;
+}
+
+.link-follower, .link-followed{
+	height: 100%;
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	color: #000;
+	text-decoration: none;
+	font-size: 16px;
+	outline: 0 none;
+}
+
+.link-follower:hover, .link-followed:hover{
+	text-decoration-line:none;	
+	outline: 0 none;
+	color: #000;
+	background: rgba(255,255,255,0.3);
+	font-weight: bolder;
+}
+
+
+#content-links-follows{
+	margin: 0;
+	padding: 0;
+}

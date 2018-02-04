@@ -1,0 +1,31 @@
+.demo-card-square.mdl-card {
+  width: 100%;
+}
+
+
+.demo-card-square > .mdl-card__title {
+  color: #000;
+  background:bottom right 15% no-repeat #fff;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+
+.card-title{
+	font-size: 20px;
+}
+
+.div-dashboard-empty{
+	margin-top: 30px; 
+	margin-left: 0; 
+	padding-left: 0; 
+	margin-right: 0; 
+	padding-right: 0;
+}
+
+.card-text{
+	text-align: justify;
+	height: 140px;
+	display: inline-flex;
+	align-items: center;
+}
+

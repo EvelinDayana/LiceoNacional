@@ -1,0 +1,196 @@
+/* Barra izquierda navegación y publicaciones*/
+
+#body-two{
+	margin:0;
+	padding: 0;
+	
+}
+
+#div-two{
+	margin:0;
+	padding: 0;
+}
+
+.center{
+	text-align: center;
+}
+
+/*Mensajes y creación de eventos*/
+
+#div-left{
+	margin: 0;
+	padding: 0;
+	margin-top: 30px;
+}
+
+#div-message, #div-events{
+	
+	background: #fff;
+	height: 58px;
+	box-shadow: 1px 1px 5px gray;
+	border-radius: 5px;
+	padding-top: 18px;
+	text-align: center;
+}
+
+
+
+#div-message{
+	margin-bottom: 30px;
+}
+
+.message, .events{
+	font-size: 15px;
+	color: #000;
+}
+
+.href-message:hover, .href-events:hover{
+	text-decoration: none;
+}
+
+.icon-envelope, .icon-list-alt{
+	color:#757575;
+	margin-right: 20px;
+	font-size: 20px;
+	vertical-align: text-bottom;
+}
+
+
+
+/*Estudiantes y profesores*/
+
+.teachers, .students{
+	height: 400px; 
+	background: #fff;
+	margin-top: 30px;
+	box-shadow: 1px 1px 5px gray;
+	-webkit-box-shadow: 1px 1px 5px gray;
+	font-size: 15px;
+	padding:20px;
+	border-radius: 5px;	
+}
+
+.teachers{
+	margin-top: 30px;
+}
+
+.students{
+	margin-bottom: 30px;
+}
+
+.icon-education, .icon-student{
+	margin-right: 15px;
+	font-size: 20px;
+	vertical-align: text-bottom;
+	color: #ffb300;
+}
+.link-teachers{
+	font-size: 15px;
+}
+
+/*Publicaciones*/
+
+.content-div-post{	
+	margin-top: 30px;
+	margin-right: -15px;
+}
+
+/*Formulario de actualización de datos*/
+
+.form-update{
+	text-align: center;
+}
+
+#label-name , #label-lastname, #label-password, #label-old-password, #label-new-password, #label-password-confirmation {
+	margin-bottom: 0px;
+	color: #009688;
+	font-size: 14px;
+}
+
+#label-email{
+	margin-bottom: 0px;
+}
+
+.mdl-textfield__label:after{
+    background-color: #009688;
+    color: #009688;
+}
+
+.form-user-update{
+	margin-top: 20px;
+}
+
+#btn-change-password{
+	background: #ffb300;
+}
+
+#change-password{
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+
+
+.mdl-textfield.is-focused .mdl-textfield__label
+{ 
+	color: #009688; 
+}
+
+.img-user-update{
+	border-radius: 100%;
+	object-fit: cover;
+}
+
+.title-header-form-update{
+	font-size: 17px;
+	font-weight: normal;
+
+}
+
+#modal-body-update-photo{
+	text-align: center;
+}
+
+/*Actualización de contraseña*/
+
+.password-new-incorrect, .password-old-incorrect, .password-old-incorrect, .box-message{
+	color: #F44336;
+	font-size: 12px;
+	margin-top: -15px;
+}
+
+@media (min-width: 315px) and (max-width: 379px){
+
+	.div-photo-profile{
+
+		border:none;
+		margin-left: 0px;
+		margin-right: 0px;
+	}
+
+	.div-name-profile{
+
+		margin-top: 37px;
+	}
+}
+
+
+@media (min-width: 380px) and (max-width: 767px){
+
+	.div-photo-profile{
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+
+}
+
+
+@media (min-width: 0px)  and (max-width: 767px){
+	.content-div-post{
+		margin-right: 1.5px;
+	}
+
+	.students{
+		margin-bottom: 0px;
+	}
+}

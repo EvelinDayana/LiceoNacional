@@ -1,0 +1,64 @@
+.box-posts{
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 20px;
+	padding-top: 0px;
+	box-shadow: 0 4px 2px -3px gray;
+	background: #fff;
+	border-radius: 2px;
+	box-shadow: 1px 1px 5px gray;
+	width: 100%;
+}
+
+
+.title{
+	padding-bottom:10px;
+}
+
+.select-post{
+	margin-bottom: 20px;
+}
+
+
+.option-photo, .option-share, .option-document{
+	margin-right: 20px;
+	font-size: 15px;
+	color:#757575;
+	cursor: pointer;
+}
+
+.option-photo:hover, .option-share:hover, .option-document:hover{
+	color:#ffb300;
+}
+
+#btn-post{
+	background:  #e0e0e0;
+	pointer-events: none;
+	color: black;
+	float: right;
+}
+
+#label-friends{
+	margin-bottom: 20px;
+}
+
+#comment-txtarea{
+	margin-bottom: 20px;
+}
+
+#file-image-post, #file-document-post{
+	display: none;
+}
+
+.image-post{
+	border-radius: 5px;
+	width: 100px;
+	height: 100px;
+	object-fit: cover;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.color-glyphicon{
+	color: #ffb300;
+}

@@ -1,0 +1,9 @@
+select u.* 
+from follows f1 
+JOIN users u 
+ON f1.iduserfollower = u.iduser 
+LEFT JOIN follows f2
+ON f2.iduserfollowed = f1.iduserfollower 
+AND f2.iduserfollower = f1.iduserfollowed 
+WHERE f1.iduserfollowed = 15
+AND f2.id IS NULL

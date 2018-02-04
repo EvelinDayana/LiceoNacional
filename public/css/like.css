@@ -1,0 +1,17 @@
+input[type=checkbox] {
+    display:none;
+}
+
+input[type=checkbox] + label{
+    display:inline-block;
+    color: #000;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+input[type=checkbox]:checked + label{
+    color: #ffb300;
+    font-weight: bold;
+    cursor: pointer;
+}
+

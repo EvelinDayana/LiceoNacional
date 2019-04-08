@@ -9,7 +9,7 @@ $iduserfollowed= $followers[$i]->iduser;
 $userAuth;
 $textFollow;
 
-$follow = 
+
 
 $userFollowed = App\Follow::where('iduserfollower' , '=' ,$iduserfollower)->where('iduserfollowed' , '=' , 
 	$iduserfollowed)->count();
@@ -41,7 +41,7 @@ if($userFollowed == 0)
 		{{$followers[$i]->nameUser}} {{$followers[$i]->lastname}}
 	</a>
 
-	<button class="mdl-button mdl-js-button mdl-js-ripple-effect btn-follow" id="{{$followers[$i]->id}}" value="{{$iduserfollowed}}">{{$textFollow}}</button>
+	<button class="mdl-button mdl-js-button mdl-js-ripple-effect btn-follows" id="{{$followers[$i]->id}}" value="{{$iduserfollowed}}">{{$textFollow}}</button>
 
 	<input type="hidden" value="{{count($followers[$i])}}" id="followers">
 

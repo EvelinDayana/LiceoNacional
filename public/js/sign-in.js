@@ -25,7 +25,7 @@ $(document).ready(function(){
 			var datasend = {
 			"email": email,
 			"password": passuser,
-			"_token": $('#token').val() 
+			"_token": $('#token_sign_in').val() 
 			};
 
 
@@ -39,7 +39,7 @@ $(document).ready(function(){
 
 					if(response['response'] == 'success'){
 						
-						window.location.replace("/");
+						window.location.reload("/");
 						
 					}else{
 						$("#hl").css("margin-top" , "5px");

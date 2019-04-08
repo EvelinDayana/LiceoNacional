@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-	$('.div-notFollow').on('click' , '.btn-follow' , function(e){
+	$('.div-notFollow').on('click' , '.btn-follows' , function(e){
 
 		var id = this.id;
 		var iduserfollowed = $('#'+id).val();

@@ -1,0 +1,54 @@
+#div-body-viewEvents{
+	margin-top: 55px;
+}
+
+.div-body-viewEvents, .div-content-table, .col-small-events, .div-content{
+	margin: 0;
+	padding: 0;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0 30px;
+  width: 100%;
+}
+
+td {
+	padding: 10px;
+}
+
+.td-name, .td-place, .td-date, .td-price, .td-hour, .td-description{
+	font-weight: bold;
+	text-align: center;
+}
+
+.td-name-content, .td-place-content, .td-date-content, .td-price-content, .td-description-content{
+	text-align: center;
+}
+
+
+tr {
+	background: #ffffff;
+    border-bottom: 1px solid #666666;
+
+}
+
+img {
+	border-radius: 8px;
+}
+
+.link-deploy{
+	padding-right: 8px; 
+	margin-right: 8px; 
+	color: #000;
+	text-decoration: underline;
+}
+
+#image-tournament{
+	width: 120px;
+	height: 120px;
+	vertical-align: middle;
+}
+
+
+

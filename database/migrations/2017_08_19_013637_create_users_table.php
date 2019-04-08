@@ -26,7 +26,7 @@ class CreateUsersTable extends Migration
             $table->string('photo')->default('usuario4.png');
             $table->string('state')->nullable();
             $table->string('typeUser');
-            $table->string('age')->nullable();
+            $table->string('course')->nullable();
             $table->string('birthdate')->nullable();
             $table->string('departament')->nullable();;
             $table->string('city')->nullable();;
@@ -34,6 +34,10 @@ class CreateUsersTable extends Migration
             $table->string('yearDeperture')->nullable();
             $table->string('emphasis')->nullable();
             $table->string('sex');
+            $table->string('name_job')->nullable();
+            $table->string('date_job')->nullable();
+            $table->string('position_job')->nullable();
+            $table->string('last_year')->nullable(); 
 
             $table->rememberToken('');           
             $table->timestamps();     

@@ -16,15 +16,16 @@ class DashboardController extends Controller
 {
     public function dashboard()
     {
-        if (Auth::check()) {
-            
-            $userId = Auth::user()->iduser;
-            $user = User::find($userId);
+   
+  	    if (Auth::check()) {
 
-			$ownPost = DB::table('posts')
-						->select('posts.*')
-						->where('posts.idusertransmitter', '=', $userId);
-				
+  	    	$userId = Auth::id();
+    		$user = User::find($userId);
+
+    		$ownPost = DB::table('posts')
+				->select('posts.*')
+				->where('posts.idusertransmitter', '=', $userId);
+		
 			$posts = DB::table('posts')
 			->join('follows' , 'follows.iduserfollowed' ,'=' ,'posts.iduserreceiver')
 			->where('follows.iduserfollower', '=', $userId)
@@ -34,7 +35,6 @@ class DashboardController extends Controller
 			->get();
 
 			$count_posts = count($posts);
-
 
 			$follows = DB::table('follows as f1')
 			->select('u.*' , 'f1.iduserfollower' , 'f1.iduserfollowed' , 'f1.id')
@@ -59,8 +59,7 @@ class DashboardController extends Controller
 			->where('follows.iduserfollower', '=', $userId)
 			->get();
 
-
-            return view ('dashboard',compact('user' , 'posts' , 'count_posts' ,'followers' , 'count_followers' , 'follows','followeds'));
+            return view ('dashboard',compact('user','followers' , 'count_followers' , 'follows','followeds', 'posts' , 'count_posts' , 'userId'));
 
         }else{
 

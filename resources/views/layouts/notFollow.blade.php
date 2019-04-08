@@ -38,7 +38,7 @@ if($userFollowed == 0)
 		{{$followers[0]->nameUser}} {{$followers[0]->lastname}}
 	</a>
 
-	<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect btn-follow" id="{{$followers[0]->id}}" value="{{$iduserfollowed}}">{{$textFollow}}</button>
+	<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect btn-follows" id="{{$followers[0]->id}}" value="{{$iduserfollowed}}">{{$textFollow}}</button>
 
 
 

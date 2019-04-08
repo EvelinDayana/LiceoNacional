@@ -10,7 +10,7 @@
 
 	<link rel="stylesheet" type="text/css" href="{{asset('css/material/material.min.css')}}">
 
-	<link rel="stylesheet" type="text/css" href="{{asset('css/post.css')}}">
+	<!-- <link rel="stylesheet" type="text/css" href="{{asset('css/post.css')}}"> -->
 
 	@yield('css')
 
@@ -18,14 +18,9 @@
 
 <body style="background: @yield('bg');" class="body">
 
-
-
-	<input type="hidden"  name="_token" id="token" value="{{Session::token()}}">
+	<input type="hidden"  name="_token"  value="{{Session::token()}}">
 
 	@yield('content')
-
-
-	
 
 </body>
 

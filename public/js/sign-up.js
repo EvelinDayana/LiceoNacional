@@ -163,7 +163,7 @@ $(document).ready(function () {
 
 					if(response['response'] == 'success'){
 						
-						window.location.replace('/');
+						window.location.reload("/");
 
 					}
 

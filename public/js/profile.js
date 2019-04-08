@@ -1,5 +1,28 @@
 $(document).ready(function(){
 
+	var typeUser = $("#hidden_typeUser").val();
+
+
+	$("#hidden_typeUser").remove();
+
+
+	var iduser = $("#iduser_configuration_data").val();
+	var authid = $("#authid_configuration_data").val();
+
+
+	var remove_button_event = $("#link-events").remove();
+
+	var remove_iduser = $("#iduser_configuration_data").remove();
+	var remove_authid = $("#authid_configuration_data").remove();
+
+
+	if ((iduser == authid) && (typeUser == "Docente" || typeUser =="Administrativo")) 
+	{
+		$(".remove").append(remove_button_event);
+	}else{
+		$("#link-events").remove();
+	}
+
 	$('#div-profile-options').on('click', '.div-photo-user' , function(e){
 
 		e.preventDefault();
@@ -32,45 +55,78 @@ $(document).ready(function(){
 		var lastname = $('#form-lastname').val();
 
 
-		if (name_user_update !=  name || lastname_user_update != lastname)
+		var message = "El campo vacío no es permitido";
+		var textReg = /^([A-Za-z]\s?)+$/;
+
+		if (name == "") 
 		{
+			$(".div-message-name-configuration").html(message);
+		}else if (!textReg.test(name)) 
+		{
+			$(".div-message-name-configuration").html("El campo debe contener sólo letras");
+		}else{
+			$(".div-message-name-configuration").hide();
+		}
 
-			var datasend = {
-				"name-update": name,
-				"lastname-update": lastname,
-				"_token": $('#token').val(), 
-			};
+		if (lastname == "") 
+		{
+			$(".div-message-lastname-configuration").html(message);
+		}else if (!textReg.test(lastname)) 
+		{
+			$(".div-message-lastname-configuration").html("El campo debe contener sólo letras");
+		}else{
+			$(".div-message-lastname-configuration").hide();
+		}
 
-			$.ajax({
 
-				type:'POST',
-				data: datasend,
-				url: '/actualizar',
-				success: function(response){
+		if(name != "" && lastname != "" && textReg.test(name) && textReg.test(lastname))
+		{
+			if (name_user_update !=  name || lastname_user_update != lastname)
+			{
 
-					$('button').data({loadingText: 'Guardando...'});
-	   				btn.button('loading');
-	   				btn.css("cursor" , "pointer");
-	    			setTimeout(function () {
-	       				btn.button('reset');
-	    			}, 500);
+				var datasend = {
+					"name-update": name,
+					"lastname-update": lastname,
+					"_token": $('#token_updateDate').val(), 
+				};
 
-					location.reload();
+				if(iduser == authid)
+				{
+					$.ajax({
 
-					setTimeout(function(){
-	    				$('#configuration').modal('hide');
-					}, 500);	
+						type:'POST',
+						data: datasend,
+						url: '/actualizar',
+						success: function(response){
+
+							$('button').data({loadingText: 'Guardando...'});
+			   				btn.button('loading');
+			   				btn.css("cursor" , "pointer");
+			    			setTimeout(function () {
+			       				btn.button('reset');
+			    			}, 500);
+
+							location.reload();
+
+							setTimeout(function(){
+			    				$('#configuration').modal('hide');
+							}, 500);	
+							
+
+
+							$('#form-password').val('');
+						}
+
+					});
 					
-
-
-					$('#form-password').val('');
+				}else{
+					$("#restricted_access").modal('show');
 				}
 
-			});
-
-		}else{
-			$('#configuration').modal('hide');
-			$('#form-password').val('');
+			}else{
+				$('#configuration').modal('hide');
+				$('#form-password').val('');
+			}
 		}
 
 
@@ -91,55 +147,80 @@ $(document).ready(function(){
 			"old_password": old_password,
 			"new_password": new_password,
 			"password_confirmation": password_confirmation,
-			"_token": $('#token').val(),
-			};
+			"_token": $('#token_updatePassword').val(),
+		};
 
+		var message = "El campo vacío no es permitido";
 		
+		var passwordReg = /^([0-9a-zA-Z]{6,15})+$/;
 
-
-		if (new_password.length >= 6) 
+		if (old_password == "") 
 		{
-			if(new_password == password_confirmation)
+			$(".div-message-old-password").html(message);
+		}
+
+		if (new_password == "") 
+		{
+			$(".div-message-new-password").html(message);
+		}else if (!passwordReg.test(new_password)) 
+		{
+			$(".div-message-new-password").html("La contraseña debe contener números y letras");
+		}else{
+			$(".div-message-new-password").hide();
+		}
+
+
+		if(new_password != "" && passwordReg.test(new_password) && old_password != "")
+		{
+			if (new_password.length >= 6) 
 			{
-				
-				$.ajax({
+				if(new_password == password_confirmation)
+				{	
+					if (iduser == authid)
+					{
+						$.ajax({
 
-					type: 'POST',
-					data: datasend,
-					url: '/actualizarContraseña',
-					success: function(response){
+							type: 'POST',
+							data: datasend,
+							url: '/actualizarContraseña',
+							success: function(response){
 
-						if(response['response'] == 'success'){
-											
-	    					$('#change-password').modal('hide');
-	    					$('#change-password').find('input').val('').end();
-	    					$('.password-old-incorrect').empty();
-	    					$('.box-message').empty();
-	    					$('.message').empty(); 
-	    					$('.password-new-incorrect').empty();
-	    					$('#form-password').val(new_password);
+								if(response['response'] == 'success'){
+													
+			    					$('#change-password').modal('hide');
+			    					$('#change-password').find('input').val('').end();
+			    					$('.password-old-incorrect').empty();
+			    					$('.box-message').empty();
+			    					$('.message').empty(); 
+			    					$('.password-new-incorrect').empty();
+			    					$('#form-password').val(new_password);
 
-						}
+								}
 
-						if (response['response'] == 'password_fail') 
-						{							
-							$(".password-old-incorrect").html("Su contraseña actual no es válida");
-						}
+								if (response['response'] == 'password_fail') 
+								{							
+									$(".password-old-incorrect").html("Su contraseña actual no es válida");
+								}
 
-						if(response['response'] == 'error'){
-							
-							$(".box-message").html("La contraseña no puede ser igual a la anterior");
-							
-						}
+								if(response['response'] == 'error'){
+									
+									$(".box-message").html("La contraseña no puede ser igual a la anterior");
+									
+								}
+							}
+
+						});
+					}else{
+
+						$("#restricted_access").modal('show');
 					}
 
-				});
-
+				}else{
+					$(".password-new-incorrect").html("Las dos contraseñas deben ser iguales para confirmar");
+				}
 			}else{
-				$(".password-new-incorrect").html("Las dos contraseñas deben ser iguales para confirmar");
+				$(".box-message").html("La contraseña debe tener como minimo seis caracteres");
 			}
-		}else{
-			$(".box-message").html("La contraseña debe tener como minimo seis caracteres");
 		}
 		
 
@@ -175,16 +256,20 @@ $(document).ready(function(){
 
 	});
 
+	
+
+
 });
 
 
 function previewFile() {
-	var preview = document.querySelector('img');
-	var file    = document.querySelector('input[type=file]').files[0];
+
+	var preview = document.querySelector('.image-profile');
+	var file    = document.querySelector('#file').files[0];
 	
 	var reader  = new FileReader();
 	reader.onload = function (e) {
-		$('#image-user').attr('src', e.target.result).addClass("image-user-update");
+		$('.image-profile').attr('src', e.target.result).addClass("image-user-update");
 	}
 
 	if (file) {
@@ -193,5 +278,4 @@ function previewFile() {
 		preview.src = "";
 	}
 }
-
 	

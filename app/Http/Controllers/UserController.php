@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\UploadedFile;
 use App\Http\Requests;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 use App\User;
 use Image;
 use DateTime;
@@ -16,6 +18,7 @@ class UserController extends Controller
     
     public function createUser( Request $request)
     {
+
 
         $email = $request['email'];
         $nameUser = $request['name'];
@@ -56,8 +59,7 @@ class UserController extends Controller
         $user->emphasis = $emphasis;
 
         $user->save();
-        Auth()->login($user);
-
+       
         return response()->json(['response' => 'success']);
 
     }
@@ -67,7 +69,7 @@ class UserController extends Controller
 
         if(Auth::attempt(['email'=>$request['email'] , 'password'=>$request['password']]))
         {
-
+            
             return response()->json(['response' => 'success']);
 
         }else{
@@ -81,7 +83,20 @@ class UserController extends Controller
     public function goProfile($iduser)
     {
         $user = User::find($iduser);
-        return view('layouts.presentation',compact('user'));
+
+        $follows = DB::table('follows')
+            ->select('users.*')
+            ->join('users' , 'users.iduser'  , '=' , 'follows.iduserfollowed')
+            ->where('follows.iduserfollower', '=', $user->iduser)
+            ->where('users.typeUser' , '=' , "Docente")
+            ->orderBy(DB::raw('RAND()'))
+            ->limit(9)
+            ->get();
+
+        $follows_count = count($follows); 
+
+
+        return view('layouts.presentation',compact('user' , 'follows' , 'follows_count' , 'iduserauth'));
     }
 
     public function create()
@@ -117,13 +132,14 @@ class UserController extends Controller
         {
 
             if ($request->file('user-photo'))
-
             {
-               $file = $request->file('user-photo');
+
+                $file = $request->file('user-photo');
                
                 $filename = $file->getClientOriginalName();
 
                 $fileExtension = time() . '.' . $file->getClientOriginalExtension();
+                
                 Image::make($file)->resize(120, 120)->save(public_path('/image/photo-user/'.$fileExtension));
 
                 $user = Auth::user();
@@ -150,53 +166,183 @@ class UserController extends Controller
     {
         $user = Auth::user();
 
-        $name = $request['name-update'];
-        $lastname = $request['lastname-update'];
+        if (Auth::id()) {
+            
+            $name = $request['name-update'];
+            $lastname = $request['lastname-update'];
 
-        $user->nameUser = $name;
-        $user->lastname = $lastname;
+            $user->nameUser = $name;
+            $user->lastname = $lastname;
 
-        $user->save();
+            $user->save();
 
-        return response()->json(['response' => true]);
+            return response()->json(['response' => true]);
+
+        }
 
     }
 
 
     public function update_password(Request $request)
     {
-        $user = Auth::user();
-        $old_password = $request['old_password'];
 
-        $new_password = $request['new_password'];
-        $password_confirmation = $request['password_confirmation'];
+        if (Auth::id()) {
+           
+        
+            $user = Auth::user();
+            $old_password = $request['old_password'];
 
-        if(Hash::check($old_password , $user->password))
-        {
-            if (Hash::check($new_password, $user->password)) {
+            $new_password = $request['new_password'];
+            $password_confirmation = $request['password_confirmation'];
+
+            if(Hash::check($old_password , $user->password))
+            {
+                if (Hash::check($new_password, $user->password)) {
+                    
+                    return response()->json(['response' => 'error']);
+                }else{
+
+                    $user->password = bcrypt($new_password);
+                    $user->save();
+
+                    return response()->json(['response' => 'success']);
+
+                }
+     
                 
-                return response()->json(['response' => 'error']);
+
             }else{
-
-                $user->password = bcrypt($new_password);
-                $user->save();
-
-                return response()->json(['response' => 'success']);
-
+                
+                return response()->json(['response' => 'password_fail']);
             }
- 
-            
 
-        }else{
-            
-            return response()->json(['response' => 'password_fail']);
         }
 
     }
 
 
-    
+    public function update_academic_information(Request $request)
+    {
+
+        if (Auth::id()) {
+
+            $user = Auth::user();
+
+            $userState = $request['userState'];
+            $typeUser = $request['typeUser'];
+
+            $dateEntry = $request['dateEntry'];
+            $course = $request['course'];
+            $dateDeparture = $request['dateDeparture'];
+            $emphasis = $request['emphasis'];
+
+            if ($typeUser == "Estudiante" && $userState == "Alumna") 
+            {
+                $dateDeparture = NULL;
+            }
+
+            if ($typeUser == "Estudiante" && $userState == "Ex alumna") {
+                $dateDeparture = $request['dateDeparture'];
+            }
+
+            if ($course >= 10) {
+                $emphasis = $request['emphasis'];
+            }else{
+                $emphasis = NULL;
+            }
+
+            $user->yearEntry = $dateEntry;
+            $user->yearDeperture = $dateDeparture;
+            $user->course = $course;
+            $user->emphasis = $emphasis;
+
+            $user->save();
+
+            return response()->json(['response' => 'success']);  
+
+        }
+        
+        
+    }
 
 
-    
+    public function update_data(Request $request)
+    {
+        if (Auth::id()) {
+
+            $user = Auth::user();
+
+            $userState = $request['userState'];
+            $typeUser = $request['typeUser'];
+
+            $birthdate = $request['birthdate'];
+
+            if (($typeUser == "Estudiante" && $userState == "Ex alumna") ||($typeUser == "Estudiante" && $userState == "Alumna"))
+            {
+                $sex = "femenino";
+            }
+
+            if ($typeUser == "Docente" || $typeUser == "Administrativo")
+            {
+                $sex = $request['sex'];
+            }
+
+            $user->birthdate = $birthdate;
+            $user->sex = $sex;
+
+            $user->save();
+
+            return response()->json(['response'=>true]);
+
+        }
+    }
+
+
+    public function update_location(Request $request)
+    {
+        if (Auth::id()) {
+
+            $user = Auth::user();
+
+            $departament = $request['departament'];
+            $city = $request['city'];
+            $address = $request['address'];
+            $cellphone = $request['cellphone'];
+
+            $user->departament = $departament;
+            $user->city = $city;
+            $user->address = $address;
+            $user->phone = $cellphone;
+
+            $user->save();
+
+            return response()->json(['response'=>true]);
+            
+        }
+
+    }
+
+    public function update_record(Request $request){
+
+        if (Auth::id()) {
+
+            $user = Auth::user();
+            
+            $company_name = $request['company_name'];
+            $position = $request['position'];
+            $date_entry = $request['date_entry'];
+
+            $user->name_job = $company_name;
+            $user->position_job = $position;
+            $user->date_job = $date_entry;
+
+            $user->save();
+
+            return response()->json(['response'=>true]);
+
+
+        }
+
+    }
+ 
 }

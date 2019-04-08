@@ -2,10 +2,7 @@
 <html>
 <head>
 
-	<link rel="stylesheet" type="text/css" href="{{asset('css/list-friendship.css')}}">
-
-	<link rel="stylesheet" type="text/css" href="{{asset('css/style-follower.css')}}">
-
+	<script type="text/javascript" src="{{asset('js/follow.js')}}"></script>
 
 </head>
 <body>
@@ -72,7 +69,7 @@
 
 </body>
 
-<script type="text/javascript" src="{{asset('js/follow.js')}}"></script>
-
+	
 
 </html>
+

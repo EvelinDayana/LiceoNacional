@@ -6,12 +6,23 @@
 
 	<meta name = "viewport" content = " width=device-width, user-scalable= no, initial-scale = 1.0, maximun-scale = 1.0, minimum-scale = 1.0">
 
-
 	<link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.min.css')}}">
 
 	<link rel="stylesheet" type="text/css" href="{{asset('css/navs.css')}}">
 
 	<link rel="stylesheet" type="text/css" href="{{asset('css/material/material.min.css')}}">
+
+	<link rel="stylesheet" type="text/css" href="{{asset('css/post.css')}}">
+
+	<link rel="stylesheet" type="text/css" href="{{asset('css/post-item.css')}}">
+
+	<link rel="stylesheet" type="text/css" href="{{asset('css/comments-post.css')}}">
+
+	<link rel="stylesheet" type="text/css" href="{{asset('css/like.css')}}">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" type="text/css" href="{{asset('css/profile.css')}}">
 
 	@yield('css')
 
@@ -21,7 +32,7 @@
 
 	<div class="bd-l">
 
-	<input type="hidden"  name="_token" id="token" value="{{csrf_token()}}"/>
+	<input type="hidden"  name="_token" value="{{csrf_token()}}"/>
 
 	<nav class="navbar navbar-default navbar-fixed-top nav" role="navigation">
 
@@ -34,7 +45,7 @@
 		      <span class="icon-bar"></span>
 		    </button>
 
-		    <a class="navbar-brand link-logo" href="/"><img src="{{asset('/image/Logo/logo.png')}}" class="img-default"></a>
+		    <a class="navbar-brand link-logo" href="/"><img src="{{asset('/image/Logo/logo.png')}}" class="img-default" id="logo-img"></a>
 
 	  	</div>
 
@@ -79,8 +90,8 @@
 		        </a>
 
 		        <ul class="dropdown-menu">
-		          <li><a href="#">Configurar cuenta</a></li>
-		          <li><a href="#">Configurar datos</a></li>
+		          <li><a data-toggle="modal" data-target="#configuration">Configurar cuenta</a></li>
+		          <li><a href="/privacy/{{Auth::id()}}">Privacidad</a></li>
 		          <li class="divider"></li>
 		          <li><a href="/salir">Cerrar sesión</a></li>
 		        </ul>
@@ -107,12 +118,20 @@
 
 <script type="text/javascript" src="{{asset('js/material/material.min.js')}}"></script>
 
-<script type="text/javascript" src="{{asset('js/friendship.js')}}"></script>
 
 <script type="text/javascript" src="{{asset('js/profile.js')}}"></script>
 
+<script type="text/javascript" src="{{asset('js/friendship.js')}}"></script>
+
 <script type="text/javascript" src="{{asset('js/presentation.js')}}"></script>
 
+<script type="text/javascript" src="{{asset('js/post.js')}}"></script>
+
+<script type="text/javascript" src="{{asset('js/post-item.js')}}"></script>
+
+<script type="text/javascript" src="{{asset('js/comments-post.js')}}"></script>
+
+<script type="text/javascript" src="{{asset('js/like.js')}}"></script>	
 
 @yield('js')
 

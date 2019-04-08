@@ -42,6 +42,8 @@
 
 .div-title-follow .active{
 	border-bottom: 4px solid #009688;
+	text-decoration-line: none;
+	color: #000;
 }
 
 .link-follower, .link-followed{

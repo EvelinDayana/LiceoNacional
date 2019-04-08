@@ -47,9 +47,10 @@ class FollowController extends Controller
         return view('follower', compact("user"));
     }
 
-    public function followed()
+    public function followed($iduser)
     {  
-        return view('followed');
+        $user = User::find($iduser);
+        return view('followed', compact("user"));
     }
 
 

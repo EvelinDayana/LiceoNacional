@@ -74,7 +74,7 @@ Iniciar sesión
 
 							<div id="hl"></div>
 
-							<input type="hidden" name="_token" value="{{Session::token()}}" id="token"/>	
+							<input type="hidden" name="_token" value="{{Session::token()}}" id="token_sign_in"/>	
 
 						</form>
 

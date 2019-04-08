@@ -3,7 +3,7 @@
 #body-two{
 	margin:0;
 	padding: 0;
-	
+	padding-bottom: 30px;
 }
 
 #div-two{
@@ -15,7 +15,11 @@
 	text-align: center;
 }
 
-/*Mensajes y creación de eventos*/
+/*creación de eventos*/
+
+#link-events{
+	margin-bottom: 30px;
+}
 
 #div-left{
 	margin: 0;
@@ -23,32 +27,33 @@
 	margin-top: 30px;
 }
 
-#div-message, #div-events{
+#div-events{
 	
 	background: #fff;
 	height: 58px;
 	box-shadow: 1px 1px 5px gray;
 	border-radius: 5px;
-	padding-top: 18px;
-	text-align: center;
+	align-items: center;
+	display:flex;
+	justify-content: center;
 }
 
 
 
-#div-message{
+/*#div-message{
 	margin-bottom: 30px;
-}
+}*/
 
-.message, .events{
+/*.message, */.events{
 	font-size: 15px;
 	color: #000;
 }
 
-.href-message:hover, .href-events:hover{
+/*.href-message:hover, */.href-events:hover{
 	text-decoration: none;
 }
 
-.icon-envelope, .icon-list-alt{
+/*.icon-envelope, */.icon-list-alt{
 	color:#757575;
 	margin-right: 20px;
 	font-size: 20px;
@@ -56,23 +61,24 @@
 }
 
 
-
 /*Estudiantes y profesores*/
 
-.teachers, .students{
-	height: 400px; 
+.teachers{
+	height: 100%; 
 	background: #fff;
-	margin-top: 30px;
 	box-shadow: 1px 1px 5px gray;
 	-webkit-box-shadow: 1px 1px 5px gray;
 	font-size: 15px;
 	padding:20px;
 	border-radius: 5px;	
+	padding-bottom:10px;
 }
 
-.teachers{
-	margin-top: 30px;
+.list-teachers{
+	margin-top: 20px;
 }
+
+
 
 .students{
 	margin-bottom: 30px;
@@ -111,6 +117,11 @@
 	margin-bottom: 0px;
 }
 
+
+.div-message-name-configuration, .div-message-lastname-configuration{
+	color: #F44336;
+}
+
 .mdl-textfield__label:after{
     background-color: #009688;
     color: #009688;
@@ -139,6 +150,8 @@
 .img-user-update{
 	border-radius: 100%;
 	object-fit: cover;
+	height: 120px;
+	width: 120px;
 }
 
 .title-header-form-update{
@@ -153,7 +166,7 @@
 
 /*Actualización de contraseña*/
 
-.password-new-incorrect, .password-old-incorrect, .password-old-incorrect, .box-message{
+.password-new-incorrect, .password-old-incorrect, .password-old-incorrect, .box-message, .div-message-new-password, .div-message-old-password{
 	color: #F44336;
 	font-size: 12px;
 	margin-top: -15px;
@@ -169,7 +182,6 @@
 	}
 
 	.div-name-profile{
-
 		margin-top: 37px;
 	}
 }

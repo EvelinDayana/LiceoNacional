@@ -1,0 +1,46 @@
+/*evento corto y evento largo */
+.create{
+	margin-top: 100px; 
+}
+
+.column-events{
+	margin: 0;
+	padding: 0;
+	height: 60px;
+	background: #e0e0e0;
+}
+
+.events-tabs{
+	margin: 0; 
+	padding: 0;
+	height: 100%;
+}
+
+.short-event, .large-event{
+	height: 100%;
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	color: #000;
+	text-decoration: none;
+	font-size: 16px;
+	outline: 0 none;
+	cursor: pointer;
+}
+
+.short-event:hover, .large-event:hover{
+	text-decoration-line:none;	
+	outline: 0 none;
+	color: #000;
+	background: rgba(255,255,255,0.3);
+	font-weight: bolder;
+	cursor: pointer;
+}
+
+.column-events .active{
+	border-bottom: 4px solid #009688;
+	text-decoration-line: none;
+	color: #000;
+}
+
+

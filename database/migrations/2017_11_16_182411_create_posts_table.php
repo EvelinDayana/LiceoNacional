@@ -19,6 +19,8 @@ class CreatePostsTable extends Migration
             $table->integer('iduserreceiver');
             $table->string('description');
             $table->string('typepost');
+            $table->string('photopost')->nullable();
+            $table->string('documentpost')->nullable();
             $table->timestamps();
 
         });

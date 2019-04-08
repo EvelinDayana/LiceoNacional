@@ -4,14 +4,6 @@
 
 	<link rel="stylesheet" type="text/css" href="{{asset('css/dashboard.css')}}">
 
-	<link rel="stylesheet" type="text/css" href="{{asset('css/post.css')}}">
-
-	<link rel="stylesheet" type="text/css" href="{{asset('css/post-item.css')}}">
-
-	<link rel="stylesheet" type="text/css" href="{{asset('css/comments-post.css')}}">
-
-	<link rel="stylesheet" type="text/css" href="{{asset('css/like.css')}}">
-
 	<link rel="stylesheet" type="text/css" href="{{asset('css/dashboard.css')}}">
 
 	<link rel="stylesheet" type="text/css" href="{{asset('css/dashboard-empty.css')}}">
@@ -117,8 +109,6 @@
 				@include('layouts.post-Item-dashboard')
 			</div>
 
-			<input type="hidden" value="{{$count_posts}}" id="count_posts">
-
 			<div class="post-item-dashboard-empty">
 				
 				@include('layouts.dashboard-empty')
@@ -139,13 +129,6 @@
 @endsection
 
 @section('js')
-	<script type="text/javascript" src="{{asset('js/post.js')}}"></script>
-
-	<script type="text/javascript" src="{{asset('js/post-item.js')}}"></script>
-	
-	<script type="text/javascript" src="{{asset('js/comments-post.js')}}"></script>
-
-	<script type="text/javascript" src="{{asset('js/like.js')}}"></script>
 
 	<script type="text/javascript" src="{{asset('js/dashboard.js')}}"></script>
 	

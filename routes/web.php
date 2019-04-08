@@ -51,8 +51,31 @@ Route::get('/amigos/{iduser}' , 'FollowController@listFriendship');
 Route::get('/seguidores/{iduser}', 'FollowController@follower');
 
 
-Route::get('/seguidos', 'FollowController@followed');
+Route::get('/seguidos/{iduser}', 'FollowController@followed');
 
 Route::get('/viewProfile/{iduser}', 'ProfileController@profile');
 
 Route::get('/viewListFriends/{iduser}', 'ProfileController@friends');
+
+Route::get('/viewInformation/{iduser}' , 'ProfileController@information');
+
+Route::get('/viewListEvents/{iduser}' , 'ProfileController@events');
+
+Route::GET('/crearEventos' , 'EventController@showEvent');
+Route::get('/shortEvent' , 'EventController@createShortEvent');
+Route::get('/largeEvent' , 'EventController@createLargeEvent');
+
+Route::post('/crearEventoLargo' , 'EventController@create_large_event');
+Route::post('/crearEventoCorto' , 'EventController@create_short_event');
+
+Route::get('/departament/{id_departament}' , 'DepartamentController@show');
+
+Route::post('/actualizar_informacion_academica' , 'UserController@update_academic_information');
+
+Route::post('/actualizar_datos_personales' , 'UserController@update_data');
+
+Route::post('/actualizar_localidad' , 'UserController@update_location');
+
+Route::post('/actualizar_trabajo' , 'UserController@update_record');
+
+Route::get('/privacy/{iduser}' , 'ProfileController@privacy');

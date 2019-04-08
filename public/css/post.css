@@ -36,6 +36,8 @@
 	pointer-events: none;
 	color: black;
 	float: right;
+	margin-top: 0;
+	padding-top: 
 }
 
 #label-friends{
@@ -50,15 +52,98 @@
 	display: none;
 }
 
-.image-post{
-	border-radius: 5px;
-	width: 100px;
-	height: 100px;
-	object-fit: cover;
-	margin-top: 30px;
-	margin-bottom: 30px;
-}
 
 .color-glyphicon{
 	color: #ffb300;
+}
+
+.post-options{
+	margin:0;
+	padding: 0;
+}
+
+.div-image{
+	height: 130px; 
+	border: 1px dotted #bdbdbd;
+	width: 130px; 
+	margin-bottom: 20px; 
+	padding: 8px; 
+	display: none;
+	text-align: center;
+}
+
+.div-document{
+	display: none;
+	margin:0;
+	padding: 0;
+}
+
+.document-post{
+	width: 100%;
+	height: 100%;
+	text-align: left;
+	border-radius: 3px;
+	position: relative;
+	display: inline-block;
+	border: 1px dotted #bdbdbd;
+	margin-bottom: 20px; 
+	padding: 8px; 
+}
+
+.option-delete{
+	z-index: 1000; 
+	position: absolute;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%; 
+	width: 100%;
+	color: #fff;
+}
+
+.image-post{
+	border-radius: 3px;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;	
+	position: relative;
+	display: inline-block;
+	font-size: 0;
+}
+
+.close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 100;
+    background-color: #FFF;
+    padding: 5px 2px 2px;
+    color: currentColor;
+    font-weight: bold;
+    cursor: pointer;
+    opacity: .;
+    text-align: center;
+    font-size: 22px;
+    line-height: 10px;
+    border-radius: 50%;
+
+}
+
+#close-document {
+    text-align: center;
+    font-size: 25px;  
+
+}
+
+.close:hover{
+    opacity: 1;
+    color: currentColor;
+}
+
+.none{
+	display: none;
+}
+
+.block{
+	display: block;
 }

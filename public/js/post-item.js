@@ -1,25 +1,79 @@
 $(document).ready(function(){
 	
+	var post_id;
+	var idusertransmitter;
+	var iduserauth;
+	var iduserreceiver;
+	
+
+	$(".post-item").on("click", ".delete-p" , function(){
+		post_id = (this.id);
+		iduserreceiver= $("#"+post_id).val();
+		idusertransmitter = $("#idusertransmitter-"+post_id).val();
+		iduserauth = $("#idusertransmitter-"+post_id).attr("class");
+		
+		
+		if (idusertransmitter == iduserauth || iduserreceiver == iduserauth)
+		{
+			$('#myModal').modal('show');
+		}else{
+			$('#warning').modal('show');
+		}
+	});
+
+
+	$(".post-item").on("click" , ".btn-delete-modal" , function(e){
+		e.preventDefault();
+
+		var message = $("#btn-"+post_id).text();
+  		
+		if (idusertransmitter == iduserauth || iduserreceiver == iduserauth)
+		{
+
+			if(message == "Eliminar"){
+
+				var idpost = post_id;
+
+				$.ajax({
+
+					type: 'GET',
+					url: "/eliminarpublicacion/"+idpost,
+					success: function(response){
+						$('#myModal').modal('hide');
+						$('#dp-'+post_id).remove();
+					}
+
+				});
+
+			}
+
+		}else{
+			if(response['response'] == false)
+			{
+				$('#warning').modal('show');
+			}
+		}
+
+	});
 
 	$(".post-item").on('input', '.textarea3', function(){
 
 		var idtxt = this.id;
 
-
-		var valor = $(".comment-txt-"+idtxt).val();
+		var valor = $(".comment-txt-link-"+idtxt).val();
 		
 		
 		if (valor.trim().length > 0 ) {
 			
-			$("#btn-submit-link-"+idtxt).removeAttr("disabled");
-			$("#btn-submit-link-"+idtxt).addClass("btn-submit2");
-			$("#btn-submit-link-"+idtxt).css("pointer-events" , "auto");
+			$(".btn-submit-comment-"+idtxt).removeAttr("disabled");
+			$(".btn-submit-comment-"+idtxt).addClass("btn-submit2");
+			$(".btn-submit-comment-"+idtxt).css("pointer-events" , "auto");
 
 		}else{
 
-			$("#btn-submit-link-"+idtxt).attr("disabled" , "disabled");
-			$("#btn-submit-link-"+idtxt).removeClass("btn-submit2");
-			$("#btn-submit-link-"+idtxt).css("cursor" , "default");
+			$(".btn-submit-comment-"+idtxt).attr("disabled" , "disabled");
+			$(".btn-submit-comment-"+idtxt).removeClass("btn-submit2");
+			$(".btn-submit-comment-"+idtxt).css("cursor" , "default");
 		}
 	});
 
@@ -31,11 +85,10 @@ $(document).ready(function(){
 		e.preventDefault();
 		
 		$(".link-comment").css("cursor" , "pointer");
-		textarea = $(".comment-txt-"+this.id);
+		textarea = $(".comment-txt-link-"+this.id);
         textarea.focus();
 
 	});
-
 
 
 	$(".post-item").on('submit', '.formulario', function(e){
@@ -50,7 +103,7 @@ $(document).ready(function(){
 		var datasend = {
 			"postid": idpost,
 			"comment": comment,
-			"_token": $('#token').val(),
+			"_token": $('#token_comment_'+idform).val(),
 		};
 
 		$.ajax({
@@ -68,32 +121,6 @@ $(document).ready(function(){
 		});
 
 	});
-
-
-	$('.post-item').on('click', '.delete-p', function(e){
-
-		e.preventDefault();
-
-		var message = confirm("¿Realmente deseas eliminar la publicación?");
-		
-		if(message == true){
-
-			var idpost = this.id;
-
-			$.ajax({
-
-				type: 'GET',
-				url: "/eliminarpublicacion/"+this.id,
-				success: function(response){
-					$('#dp-'+idpost).remove();
-				}
-			});
-	
-		}
-
-	});
-
-
 
 });
 

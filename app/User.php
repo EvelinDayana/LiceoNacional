@@ -30,4 +30,10 @@ class User extends Model implements Authenticatable
 		return $this->hasMany('App\Follow');
 
 	}
+
+	public function events(){
+
+		return $this->hasMany('App\Event');
+
+	}
 }

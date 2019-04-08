@@ -1,0 +1,226 @@
+.body-information{
+	margin: 0;
+	padding: 0;
+	margin-top: 30px;
+}
+
+.box-body, .box-width{
+	margin:0;
+	padding: 0;
+}
+
+
+/*left*/
+
+.box-academic-information{
+	margin-left:  0;
+	padding-left: 0; 
+	margin-bottom: 30px;
+}
+
+.box-location{
+	margin-left: 0;
+	padding-left: 0; 
+	margin-bottom: 30px;
+}
+
+/* right */
+
+.box-data{
+	margin-right: 0;
+	padding-right: 0; 
+	margin-bottom: 30px;
+}
+
+.box-record{
+	margin-right: 0; 
+	padding-right: 0; 
+	margin-bottom: 30px;
+}
+
+
+
+/*left*/
+.academic-information , .location{
+	margin-top: 0;
+	padding-left: 0;
+	background: #fff;
+	height: 100%;
+	border-radius: 3px;
+	padding-bottom: 20px;
+}
+
+/*right*/
+
+.data, .record{
+	margin-right: 0;
+	padding-right: 0;
+	background: #fff;
+	height: 100%;
+	border-radius: 3px;
+	padding-bottom: 20px;
+}
+
+.div-title-box-record, .div-title-box-data , .div-title-box-academic-information , .div-title-box-location{
+	margin: 0;
+	padding: 0;
+}
+
+.title-box-record , .title-box-data, .title-box-academic-information , .title-box-location{
+	padding: 20px;
+	font-size: 17px;
+	font-weight: bold;
+}
+
+.edit-title-box-record, .edit-title-box-data , .edit-title-box-academic-information , .edit-title-box-location{
+	padding-top: 20px;
+	padding-right: 20px;
+	font-size: 17px;
+	font-weight: bold;
+}
+
+.glyphicon-pencil{
+	color: #757575;
+}
+
+.glyphicon-pencil:hover{
+	color: #ffb300;
+}
+
+.body-box-record, .body-box-data , .body-box-academic-information , .body-box-location{
+	padding-left:20px;
+	padding-right: 20px;
+}
+
+.privacy-box-record, .privacy-box-data , .privacy-box-academic-information, .privacy-box-location{
+	margin-left: 20px;
+	color: #ffb300;
+	font-weight: bold;
+	font-size: 17px;
+}
+
+.glyphicon-lock{
+	padding-right: 15px;
+}
+
+.privacy-box-record:hover , .privacy-box-data:hover , .privacy-box-academic-information:hover , .privacy-box-location:hover{
+	outline: 0 none;
+	text-decoration-line: none;
+	color: #009688;
+}
+
+.title-modal{
+	color: #009688;
+}
+
+.date{
+	font-weight: normal;
+}
+
+.cancel-btn{
+	outline: 0 none;
+	text-decoration: none;
+	color: #000;
+}
+
+.cancel-btn:hover{
+	text-decoration-line: none;
+	outline: 0 none;
+	font-weight: bold;
+	text-decoration: none;
+	color: #000;
+}
+
+.birthdate, .sex , .dateEntry , .dateDeparture, .course, .emphasis, .departament , .city, .address, .cellphone , .name_job, .position_job, .date_entry{
+	color: #757575;
+}
+
+.result-gender:first-letter , .result-address:first-letter, .result-departament:first-letter, .result-position-job:first-letter, .result-name-job:first-letter, .result-city:first-letter, .result-phone:first-letter{
+	text-transform: uppercase;
+}
+
+
+
+/*Modal information*/
+.modal-body{
+	height: 100%;
+}
+
+.modal-div-dateEntry, .modal.div-emphasis, .modal-div-course, .div-modal-birthdate, .modal-div-dateJob, .div-modal-departament, .div-modal-city, .div-modal-address, .div-modal-cellphone{
+	margin-bottom: 10px;
+}
+
+.label-gender{
+	margin: 0; 
+	padding: 0;
+}
+
+.input-sex-fem, .input-sex-masc{
+	font-weight: normal;
+}
+
+#snackbar_update_message {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+}
+
+#snackbar_update_message.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;} 
+    to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;} 
+    to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+
+
+/*Mensajes alerta validaciones*/
+
+.div-message-name-job , .div-message-position, .div-message-date-job{
+	color: #ffb300;
+}
+
+
+@media (min-width: 0px) and (max-width: 767px){
+
+	.box-record, .box-data{
+		margin: 0;
+		padding: 0;
+		margin-bottom: 30px;
+		margin-top: 5px;
+	}
+
+	.box-width{
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	
+}

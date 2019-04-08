@@ -2,6 +2,10 @@
 
 <div id="configuration" class="modal face" role="dialog">
 
+	<input type="hidden" value="{{$user->iduser}}" id="iduser_configuration_data">
+
+	<input type="hidden" value="{{Auth::id()}}" id="authid_configuration_data">
+
 	<div class="modal-dialog">
 
 		<div class="modal-content">
@@ -20,15 +24,21 @@
 
 					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 						<input class="mdl-textfield__input" type="text" name="name-update" id="form-name" value="{{Auth::user()->nameUser}}" required/>
+
 						<label class="mdl-textfield__label" for="form-name" id="label-name">Nombre</label>
 						<input type="hidden" name="name-user" value="{{Auth::user()->nameUser}}" id="name-user-update">
 					</div>
 
+					<div class="div-message-name-configuration"></div>
+
 					<div class=" mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 						<input type="text" name="lastname-update" class="mdl-textfield__input" id="form-lastname" value="{{Auth::user()->lastname}}" required/>
+
 						<label for="form-lastname" class="mdl-textfield__label" id="label-lastname">Apellido</label>	
 						<input type="hidden" name="lastname-user" value="{{Auth::user()->lastname}}" id="lastname-user-update">				
 					</div>
+
+					<div class="div-message-lastname-configuration"></div>
 
 					<div class=" mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 						<input type="password" name="lastname-update" class="mdl-textfield__input" id="form-password" data-toggle="modal" data-target="#change-password" readonly="true"/>
@@ -37,7 +47,7 @@
 
 					<br>
 
-					<input type="hidden" id="token" value="{{Session::token()}}" name="_token">
+					<input type="hidden" id="token_updateDate" value="{{Session::token()}}" name="_token">
 
 					<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary btn-form-configuration" id="{{Auth::id()}}" style="background: #ffb300;">
 					Guardar cambios</button>
@@ -73,6 +83,8 @@
 						<label class="mdl-textfield__label" for="update-old-password" id="label-old-password">Contraseña actual</label>					
 					</div>
 
+					<div class="div-message-old-password"></div>
+
 					<br>
 
 					<div class="password-old-incorrect"></div>
@@ -81,6 +93,8 @@
 						<input type="password" name="new_password" class="mdl-textfield__input" id="update-new-password" min="6"/>
 						<label class="mdl-textfield__label" for="update-new-password" id="label-new-password">Nueva contraseña</label>					
 					</div>
+
+					<div class="div-message-new-password"></div>
 
 					<br>
 
@@ -100,7 +114,7 @@
 
 					<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" id="btn-change-password" type="submit">Guardar cambios</button>
 
-					<input type="hidden" id="token" value="{{Session::token()}}" name="_token">
+					<input type="hidden" id="token_updatePassword" value="{{Session::token()}}" name="_token">
 
 				</form>
 
@@ -143,13 +157,13 @@
 
 				<br>
 
-				<img  id="image-user"/>
-
+				<img  class="image-profile"/>
+ 
 				<br>
 			
 				<button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" id="file-image">Guardar cambios </button>
 
-				<input type="hidden" name="_token" value="{{Session::token()}}" id="token">
+				<input type="hidden" name="_token" value="{{Session::token()}}" id="token_updatePhoto">
 
 			</form>
 
@@ -158,4 +172,26 @@
 
 	</div>
 
+</div>
+
+
+<!-- ventana modal mensaje no permitido -->
+
+<div id="restricted_access" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Acceso restringido</h4>
+      </div>
+      <div class="modal-body">
+        <p>Usted no está permitido para realizar las actualizaciones.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+
+  </div>
 </div>
